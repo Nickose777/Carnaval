@@ -6,7 +6,7 @@
     opacity: 0;
     max-height: 0;
     font-size: 0;
-    transition: .25s ease;
+    transition: 1s cubic-bezier(0.42,0,0.58,1);
 }
 
 .read-more-state:checked ~ .read-more-wrap .read-more-target {
