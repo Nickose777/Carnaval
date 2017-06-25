@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse header red-gradient">
+        <div class="container">
+            <div class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav white-text text-18">
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#events">Мероприятия</a></li>
+                    <li><a href="#schedule">Расписание</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <p class="header-text-90 white-text">Ярмарка</p>
+                <p class="header-text-48 white-text">28.06 - 29.06</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <p class="white-text text-20">@ViewBag.Description</p>
+                </div>
+                <div class="col-lg-7">
+                    <div id="gallery">
+                        @Html.Partial("Gallery")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer class="red-gradient">
+        <div id="contacts" class="container white-text text-20">
+            <div class="col-lg-4">
+                <p class="underlined">Спонсоры:</p>
+                <p>Roshen</p>
+                <p>Ольга Бурундук</p>
+            </div>
+            <div class="col-lg-4">
+                <p class="underlined">Контакты:</p>
+                <p>+38096775455</p>
+                <p>carnaval@gmail.com</p>
+            </div>
+            <div></div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

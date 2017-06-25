@@ -1,0 +1,47 @@
+﻿@using Carnaval.Models
+
+<div class="row">
+    <p id="about" class="section-header-text">О нас</p>
+    <p class="text-20">@ViewBag.About</p>
+</div>
+<hr />
+<div class="row">
+    <p id="events" class="section-header-text">Мероприятия</p>
+    @{
+        int i = 1;
+        foreach (EventModel _event in ViewBag.Events)
+        {
+            <div class="col-md-4">
+                <img src="@Url.Content(_event.ImagePath)" alt="Картинка мероприятия" class="img-thumbnail thumbnail img-maxh-200" />
+                <br />
+                <input type="checkbox" class="read-more-state" id="post-@i" />
+                <p class="text-20 read-more-wrap">@_event.ShortDescription<span class="read-more-target">@_event.RestOfDescription</span></p>
+                <label for="post-@i" class="read-more-trigger text-17 white-text pull-right"></label>
+            </div>
+            i++;
+        }
+    }
+</div>
+<hr />
+<div class="row">
+    <p id="schedule" class="section-header-text">Расписание</p>
+    <table class="table table-sm table-inverse">
+        <thead class="text-20">
+            <tr>
+                <th>Мероприятие</th>
+                <th>Время</th>
+                <th>Место</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Schedule schedule in ViewBag.Schedules)
+            {
+                <tr class="text-17">
+                    <td>@schedule.EventName</td>
+                    <td>@schedule.Time</td>
+                    <td>@schedule.Place</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

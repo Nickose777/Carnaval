@@ -1,0 +1,39 @@
+﻿.read-more-state {
+    display: none !important;
+}
+
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+    content: 'Читать дальше';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+    content: 'Свернуть';
+}
+
+.read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .5em;
+    line-height: 2;
+    border: 1px solid #FFA286;
+    border-radius: 20px;
+
+    background: #ff6433; /* Old browsers */
+    background: -moz-linear-gradient(#ff6433 0%, #ffb9a0 68%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(#ff6433 0%,#ffb9a0 68%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, #ff6433 0%,#ffb9a0 68%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ff6433',GradientType=0 ); /* IE6-9 */
+}
